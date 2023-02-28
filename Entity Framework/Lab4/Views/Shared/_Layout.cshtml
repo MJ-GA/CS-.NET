@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/StyleSheet.css">
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        @Html.ActionLink("Home", "Index", "Home") &nbsp;
+        @Html.ActionLink("Client", "Index", "Clients") &nbsp;
+        @Html.ActionLink("Brokerage", "Index", "Brokerages") 
+    </header>
+    <div id="content">
+        @RenderBody()
+    </div>
+    <footer>
+        @await RenderSectionAsync("Scripts", required: false)
+    </footer>
+   
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Sing";
+    var sum = 2;
+    var totalSum = 0;
+    var bottles = @ViewBag.Bottles;
+    bool isValid = Int32.TryParse(bottles, out sum);
+    if (isValid == true)
+    {
+        totalSum = sum;
+    }
+
+}
+<form asp-controller="Home" asp-action="SongForm" method="post">
+<button  type="submit" name="PlayAgain" value="PlayAgain"  >Play Again</button></form>
+
+@for(int i = @totalSum; i >= 0; i--)
+{
+    if (i == 0)
+    {
+        <p>There are no bottles hanging on the wall.</p>
+    }
+
+     else if (i == 1)
+    {
+        <p>@i green bottle hanging on the wall,<br>
+        @i green bottle hanging on the wall,
+        <br>
+        And if one green bottle should accidentally fall,
+        <br>
+        There'll be no green bottles hanging on the wall.<br><br>
+        
+        </p>
+
+    }
+    else if(@i ==2){
+         <p>@i green bottles hanging on the wall,<br>
+        @i green bottles hanging on the wall,
+        <br>
+        And if one green bottle should accidentally fall,
+        <br>
+        There'll be @(i-1) green bottle hanging on the wall.<br><br>
+        
+        </p>
+    }
+
+    else if(i>2)
+    {
+        <p>@i green bottles hanging on the wall,<br>
+        @i green bottles hanging on the wall,
+        <br>
+        And if one green bottle should accidentally fall,
+        <br>
+        There'll be @(i-1) green bottles hanging on the wall.<br><br>
+        
+    </p>
+    }
+    
+}

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>Welcome to my Lab3 Page </h1> <br>  
+        <h3> My name is Mohamed Jouini !  </h3>
+        <br> 
+        @Html.ActionLink(" Home ","Index", "Home") &nbsp;
+        @Html.ActionLink(" Show the song", "SongForm", "Home") &nbsp;
+        @Html.ActionLink(" Persons ", "CreatePerson", "Home")
+
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+    <h3>I created a wwwroot folder, added a css folder and then a css file. as for _layout, I created a shared folder in the Views folder and added a razor view item called _Layout.</h3>
+    <h3>The layout Defines a top level template for views in the app</h3> 
+    <h3>_layout will allow us to navigate to other cshtml pages in the project, conventinally it is created in views/shared folder and defined in _ViewStart as the default layout. </h3> 
+    <h3> We want Css to be a static file, that's why we want to go to wwwroot. The css file is going to be used by _Layout globally.</h3> 
+    
+    </footer>
+</body>
+</html>
